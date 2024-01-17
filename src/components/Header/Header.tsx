@@ -1,44 +1,19 @@
 import Button from "../Button/Button";
 import styles from "./Header.module.scss";
+import logo from "../../assets/images/ptaszek-logo.png";
+import Logo from "../Logo/Logo";
+import Nav from "../Menu/Nav";
 
 const Header: React.FC = () => {
 	return (
 		<header className={`${styles.header} container w`}>
 			<div className={styles["header__wrapper"]}>
 				<h1 className={styles["header__home-title"]}>Mariusz Ptaszek</h1>
-				<div className="header__wrapper-logo">
-					<a href="<?=home_url(); ?>">
-						<img
-							src="http://mariuszptaszek.pl/wp-content/uploads/2021/03/ptaszek-logo.png"
-							alt="Mariusz Ptaszek Logo"
-						/>
-					</a>
+				<div className={styles["header__wrapper-logo"]}>
+					<Logo src={logo} alt="" />
 				</div>
 				<div className={styles["header__wrapper-menu"]}>
-					<nav className="n-menu-wrap n-desktop-menu-wrap">
-						<ul id={styles["menu-main-menu"]}>
-							<li className={styles["menu-item"]}>
-								<a href="http://mariuszptaszek.pl/" aria-current="page">
-									<span>Strona główna</span>
-								</a>
-							</li>
-							<li className={styles["menu-item"]}>
-								<a href="http://mariuszptaszek.pl/o-mnie/">
-									<span>O mnie</span>
-								</a>
-							</li>
-							<li className={styles["menu-item"]}>
-								<a href="http://mariuszptaszek.pl/portfolio/">
-									<span>Portfolio</span>
-								</a>
-							</li>
-							<li className={styles["menu-item"]}>
-								<a href="http://mariuszptaszek.pl/kontakt/">
-									<span>Kontakt</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
+					<Nav />
 					<Button className="blue-btn">Pogadajmy</Button>
 				</div>
 				<div className={styles["header__wrapper-burger"]}>
