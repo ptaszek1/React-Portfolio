@@ -1,0 +1,138 @@
+.geometry-top-left {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    pointer-events: none;
+    z-index: -1;
+}
+.geometry-bottom-left {
+    position: absolute;
+    bottom: 490px;
+    left: -100px;
+    pointer-events: none;
+    z-index: -1;
+    max-width: 252px;
+}
+.geometry-dotts {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    transform: translate(0,-50%);
+    pointer-events: none;
+    @media(max-width: 1650px) {
+        display: none;
+    }
+    img {
+        max-width: 205px;
+    }
+}
+.geometry-bottom-right {
+    position: absolute;
+    right: 50px;
+    bottom: 150px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hello {
+    padding-top: 133px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+    @media(min-width: 768px) {
+        padding-top: 233px;
+    }
+    &__text {
+        max-width: 682px;
+        position: relative;
+        &-circle {
+            position: absolute;
+            right: 0;
+            top: -50px;
+            z-index: -1;
+            pointer-events: none;
+            width: 153px;
+            height: 153px;
+            border: 5px solid #12152F;
+            border-radius: 50%;
+            pointer-events: none;
+            @media(min-width: 768px) {
+                right: -28px;
+            }
+        }
+        &-line {
+            position: absolute;
+            top: 320px;
+            left: -500px;
+            pointer-events: none;
+            display: none;
+            @media(min-width: 1475px) {
+                display: block;
+            }
+        }
+        &-title {
+            font-size: 69px;
+            line-height: 69px;
+            @media(max-width: 600px) {
+                font-size: 45px;
+                line-height: 45px;
+            }
+            @media(max-width: 500px) {
+                font-size: 35px;
+                line-height: 35px;
+            }
+            &-light {
+                font-weight: 300;
+                margin-bottom: 30px;
+            }
+            &-bold {
+                font-weight: 700;
+                margin-bottom: 30px;
+            }
+        }
+        &-buttons {
+            position: relative;
+            a:first-of-type {
+                margin-right: 35px;
+                margin-bottom: 15px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                border: 3px solid #12152F;
+                border-radius: 50%;
+                bottom: -150px;
+                left: 50px;
+                @media(min-width: 1250px) {
+                    left: 10px;
+                }
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -100px;
+                left: 0;
+                width: 44px;
+                height: 38px;
+                background-image: url('../../assets/images/small-triangle.svg');
+                background-size: cover;
+                background-position: center;
+                @media(min-width: 1250px) {
+                    left: -40px;
+                }
+            }
+        }
+    }
+    &__image {
+        display: none;
+        @media(min-width: 1024px) {
+            display: block;
+        }
+        img {
+            margin-top: -40px;
+        }
+    }
+}

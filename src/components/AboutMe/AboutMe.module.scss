@@ -1,0 +1,73 @@
+.about-me {
+    margin-bottom: 190px;
+    color: #fff;
+    &.single-page {
+        margin-top: 190px;
+    }
+    &__wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        &-text {
+            max-width: 50%;
+            flex: 0 0 50%;
+            padding-right: 55px;
+            &-hello {
+                font-size: 14px;
+                line-height: 24px;
+                margin-bottom: 20px;
+            }
+            &-name {
+                font-size: 28px;
+                line-height: 34px;
+                font-weight: 700;
+                margin-bottom: 32px;
+            }
+            p {
+                margin-top: 0px;
+                margin-bottom: 53px;
+            }
+            &-buttons {
+                .transparent-btn {
+                    display: none;
+                    @media(min-width: 768px) {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        &-skills {
+            max-width: 50%;
+            flex: 0 0 50%;
+            padding-left: 55px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #E2E2E3;
+            &-item {
+                &-top {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 13px;
+                }
+                &-bar {
+                    max-width: 100%;
+                    width: 100%;
+                    background-color: #1B2044;
+                    border-radius: 5px;
+                    height: 10px;
+                    margin-bottom: 30px;
+                    position: relative;
+                    &-inside {
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        top: 0;
+                        height: 10px;
+                        border-radius: 5px;
+                        background-color: #6B84FF;
+                    }
+                }
+            }
+        }
+    }
+}
