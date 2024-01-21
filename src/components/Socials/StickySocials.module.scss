@@ -1,0 +1,22 @@
+.sticky-socials {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0,-50%);
+    display: none;
+    z-index: 2;
+    @media(min-width: 1380px) {
+        display: block;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        color: #000;
+        &-line {
+            width: 50px;
+            border-bottom: 2px dashed #364182;
+            margin-right: 6px;
+        }
+    }
+}

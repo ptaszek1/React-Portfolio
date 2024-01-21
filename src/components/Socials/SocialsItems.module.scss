@@ -1,0 +1,26 @@
+.social-item {
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+    &:hover {
+        background-color: #6B84FF;
+        svg {
+            path {
+                fill: #fff;
+            }
+        }
+    }
+    svg {
+        max-width: 60%;
+        path {
+            transition: .3s all ease-in-out;
+            fill: #000;
+        }
+    }
+}
