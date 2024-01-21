@@ -3,6 +3,7 @@ import Description from "../Description/Description";
 import styles from "./AboutMe.module.scss";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import Button from "../Button/Button";
+import Skills from "../Skills/Skills";
 
 const AboutMe: React.FC = () => {
 	return (
@@ -12,7 +13,6 @@ const AboutMe: React.FC = () => {
 				<div className="about-me__wrapper row">
 					<div className="about-me__wrapper-text col-12 col-md-6">
 						<div className={styles["about-me__wrapper-text-hello"]}>
-							{" "}
 							Cześć!
 						</div>
 						<div className={styles["about-me__wrapper-text-name"]}>
@@ -34,21 +34,7 @@ const AboutMe: React.FC = () => {
 						</div>
 					</div>
 					<div className="about-me__wrapper-skills col-12 col-md-6">
-						<div className="about-me__wrapper-skills-item">
-							<div
-								className="about-me__wrapper-skills-item-top"
-								style={{ maxWidth: "%" }}
-							>
-								<div className="about-me__wrapper-skills-item-top-name"></div>
-								<div className="about-me__wrapper-skills-item-top-value"></div>
-							</div>
-							<div className="about-me__wrapper-skills-item-bar">
-								<div
-									className="about-me__wrapper-skills-item-bar-inside"
-									style={{ maxWidth: "%" }}
-								></div>
-							</div>
-						</div>
+						<Skills />
 					</div>
 				</div>
 			</section>
