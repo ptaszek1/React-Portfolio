@@ -10,8 +10,8 @@ const AboutMe: React.FC = () => {
 		<div className="container w">
 			<section className={styles["about-me"]}>
 				<SectionTitle title="O mnie" alignment="right" />
-				<div className="about-me__wrapper row">
-					<div className="about-me__wrapper-text col-12 col-md-6">
+				<div className={`${styles["about-me__wrapper"]}`}>
+					<div className={`${styles["about-me__wrapper-text"]}`}>
 						<div className={styles["about-me__wrapper-text-hello"]}>
 							Cześć!
 						</div>
@@ -33,7 +33,7 @@ const AboutMe: React.FC = () => {
 							</Button>
 						</div>
 					</div>
-					<div className="about-me__wrapper-skills col-12 col-md-6">
+					<div className={`${styles["about-me__wrapper-skills"]}`}>
 						<Skills />
 					</div>
 				</div>

@@ -4,6 +4,7 @@ import SkillItem from "./SkillItem";
 import styles from "./Skills.module.scss";
 
 interface Skill {
+	id: number;
 	name: string;
 	level: number;
 }
@@ -16,7 +17,7 @@ const Skills: React.FC<SkillsProps> = ({ skills = SkillsData }) => {
 	return (
 		<div className={styles.skills}>
 			{skills.map((skill) => (
-				<SkillItem name={skill.name} level={skill.level} />
+				<SkillItem name={skill.name} level={skill.level} key={skill.id} />
 			))}
 		</div>
 	);

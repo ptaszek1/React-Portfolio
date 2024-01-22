@@ -1,0 +1,13 @@
+.my-services {
+    margin-bottom: 190px;
+    &__row {
+        margin: 0 -15px;
+        display: flex;
+        justify-content: center;
+    }
+    &__col {
+        max-width: 33.333%;
+        flex: 0 0 33.333%;
+        padding: 0 15px;
+    }
+}
