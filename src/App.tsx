@@ -8,6 +8,8 @@ import About from "./pages/About/About";
 import "./App.scss";
 import StickySocials from "./components/Socials/StickySocials";
 import socials from "./data/socials/Socials";
+import Footer from "./components/Footer/Footer";
+import Portfolio from "./pages/Portfolio/Portfolio";
 
 const App: React.FC = () => {
 	const element = useRoutes([
@@ -18,6 +20,10 @@ const App: React.FC = () => {
 		{
 			path: "/about",
 			element: <About />,
+		},
+		{
+			path: "/portfolio",
+			element: <Portfolio />,
 		},
 	]);
 
@@ -33,6 +39,7 @@ const App: React.FC = () => {
 			<AnimatePresence mode="wait" initial={false}>
 				{React.cloneElement(element, { key: location.pathname })}
 			</AnimatePresence>
+			<Footer />
 		</>
 	);
 };

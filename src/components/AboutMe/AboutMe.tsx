@@ -5,11 +5,15 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import Button from "../Button/Button";
 import Skills from "../Skills/Skills";
 
-const AboutMe: React.FC = () => {
+interface AboutMeProps {
+	sectionTitleTag?: keyof JSX.IntrinsicElements; // Allow any valid HTML tag for SectionTitle
+}
+
+const AboutMe: React.FC<AboutMeProps> = ({ sectionTitleTag = "div" }) => {
 	return (
 		<div className="container w">
 			<section className={styles["about-me"]}>
-				<SectionTitle title="O mnie" alignment="right" />
+				<SectionTitle title="O mnie" alignment="right" tag={sectionTitleTag} />
 				<div className={`${styles["about-me__wrapper"]}`}>
 					<div className={`${styles["about-me__wrapper-text"]}`}>
 						<div className={styles["about-me__wrapper-text-hello"]}>

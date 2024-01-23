@@ -16,12 +16,12 @@ const data = [
 	{
 		id: 3,
 		title: "Portfolio",
-		to: "/projects",
+		to: "/portfolio",
 	},
 	{
 		id: 4,
 		title: "Kontakt",
-		to: "/contact",
+		to: "/kontakt",
 	},
 ];
 

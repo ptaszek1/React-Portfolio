@@ -18,6 +18,7 @@ const PortfolioData: {
 	description: string;
 	technology: Array<string>;
 	link: string;
+	slug: string;
 	gallery: Array<string>;
 	mainImage: string;
 	date: string;
@@ -28,6 +29,7 @@ const PortfolioData: {
 		description: "",
 		technology: ["Wordpress", "Woocommerce", "Sass", "Javascript", "ACF Pro", "PHP"],
 		link: "https://catering.goraco-polecam.pl",
+		slug: "/catering-goraco-polecam",
 		gallery: [$cgpHome, $cgpCart, $cgpSingle],
 		mainImage: $cgp,
 		date: "03.02.2023",
@@ -38,6 +40,7 @@ const PortfolioData: {
 		description: "Opis",
 		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP"],
 		link: "https://medycznarejestracja.pl/",
+		slug: "/medyczna-rejestracja",
 		gallery: [$mrBlog, $mrHome, $mrBenefits],
 		mainImage: $mr,
 		date: "03.05.2021",

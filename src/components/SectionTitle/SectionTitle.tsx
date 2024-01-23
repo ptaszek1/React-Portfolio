@@ -4,14 +4,19 @@ import styles from "./SectionTitle.module.scss";
 interface SectionTitleProps {
 	title: string;
 	alignment?: "left" | "right" | "center";
+	tag?: keyof JSX.IntrinsicElements; // Allow any valid HTML tag
 }
 
-const SectionTitle: React.FC<SectionTitleProps> = ({ title, alignment = "left" }) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({
+	title,
+	alignment = "left",
+	tag: Tag = "div", // Default to div
+}) => {
 	const wrapperClassName = `${styles["section-title__wrapper"]} ${styles[alignment]}`;
 
 	return (
 		<div className={wrapperClassName}>
-			<div className={styles["section-title"]}>{title}</div>
+			<Tag className={styles["section-title"]}>{title}</Tag>
 		</div>
 	);
 };

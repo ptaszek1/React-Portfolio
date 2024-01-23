@@ -8,9 +8,9 @@ const Homepage: React.FC = () => {
 	return (
 		<>
 			<Hello />
-			<AboutMe />
-			<Services />
-			<Articles />
+			<AboutMe sectionTitleTag="h2" />
+			<Services sectionTitleTag="h2" />
+			<Articles sectionTitleTag="h2" />
 		</>
 	);
 };

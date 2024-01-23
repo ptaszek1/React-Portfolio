@@ -4,11 +4,19 @@ import ArticleItem from "./ArticleItem";
 import styles from "./Articles.module.scss";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
-const Articles: React.FC = () => {
+interface ArticlesProps {
+	sectionTitleTag?: keyof JSX.IntrinsicElements; // Allow any valid HTML tag for SectionTitle
+}
+
+const Articles: React.FC<ArticlesProps> = ({ sectionTitleTag = "div" }) => {
 	return (
 		<div className="container w">
 			<section className={styles["my-work"]}>
-				<SectionTitle title="Moja praca" alignment="right" />
+				<SectionTitle
+					title="Moja praca"
+					alignment="right"
+					tag={sectionTitleTag}
+				/>
 				<div className="row">
 					<div className="col-12">
 						<a href="/portfolio" className="view-all right">
@@ -23,7 +31,7 @@ const Articles: React.FC = () => {
 							title={article.title}
 							image={article.mainImage}
 							technology={article.technology[0]}
-							link={article.link}
+							slug={article.slug}
 						/>
 					))}
 				</div>
