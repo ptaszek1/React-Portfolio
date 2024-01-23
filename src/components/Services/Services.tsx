@@ -3,6 +3,7 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import styles from "./Services.module.scss";
 import ServicesData from "../../data/Services/ServicesData";
 import ServicesItem from "./ServicesItem";
+import Container from "../Container/Container";
 
 interface ServicesProps {
 	sectionTitleTag?: keyof JSX.IntrinsicElements; // Allow any valid HTML tag for SectionTitle
@@ -10,7 +11,7 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({ sectionTitleTag = "div" }) => {
 	return (
-		<div className="container w">
+		<Container>
 			<section className={styles["my-services"]}>
 				<SectionTitle
 					title="Moje usługi"
@@ -25,7 +26,7 @@ const Services: React.FC<ServicesProps> = ({ sectionTitleTag = "div" }) => {
 					))}
 				</div>
 			</section>
-		</div>
+		</Container>
 	);
 };
 

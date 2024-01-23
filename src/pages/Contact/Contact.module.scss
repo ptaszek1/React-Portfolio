@@ -1,0 +1,99 @@
+.contact {
+    margin-bottom: 190px;
+    position: relative;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        input[type="text"], input[type="email"], textarea {
+            max-width: 100%;
+            width: 100%;
+            display: block;
+            background-color: transparent;
+            font-size: 14px;
+            line-height: 24px;
+            color: #707070;
+            font-family: "Josefin Sans",sans-serif;
+            border: none;
+            padding-bottom: 16px;
+            margin-bottom: 22px;
+            border-bottom: 1px solid #12152F;
+            resize: none;
+        }
+        textarea {
+            height: 100px;
+            margin-bottom: 45px;
+        }
+        input[type="submit"] {
+            background-color: #6B84FF;
+            font-size: 14px;
+            line-height: 18px;
+            font-family: "Josefin Sans",sans-serif;
+            border: none;
+            padding: 10px 25px 7px 25px;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s all ease-in-out;
+            &:hover {
+                background-color: #fff;
+                color: #6B84FF;
+            }
+        }
+        &-form {
+            max-width: 50%;
+            flex: 0 0 50%;
+            padding-right: 50px;
+            @media(min-width: 1024px) {
+                max-width: 60%;
+                flex: 0 0 60%;
+            }
+            .wpcf7-not-valid-tip {
+                margin-bottom: 30px;
+                font-size: 14px;
+            }
+            .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output {
+                color: #707070;
+                border-width: 1px;
+                padding: 5px;
+                border-radius: 5px;
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+            .wpcf7 form.sent .wpcf7-response-output {
+                color: #707070;
+                border-width: 1px;
+                padding: 5px;
+                border-radius: 5px;
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+        }
+        &-image {
+            max-width: 50%;
+            flex: 0 0 50%;
+            padding-left: 50px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            @media(min-width: 768px) {
+                margin-bottom: 0px;
+            }
+            @media(min-width: 1024px) {
+                max-width: 40%;
+                flex: 0 0 40%;
+            }
+            svg {
+                max-width: 100%;
+            }
+        }
+    }
+    &__many {
+        position: absolute;
+        right: 0;
+        top: -161px;
+        pointer-events: none;
+        @media(min-width: 1500px) {
+            right: -161px;
+        }
+    }
+}

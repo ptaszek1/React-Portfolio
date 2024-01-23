@@ -4,6 +4,7 @@ import styles from "./AboutMe.module.scss";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import Button from "../Button/Button";
 import Skills from "../Skills/Skills";
+import Container from "../Container/Container";
 
 interface AboutMeProps {
 	sectionTitleTag?: keyof JSX.IntrinsicElements; // Allow any valid HTML tag for SectionTitle
@@ -11,7 +12,7 @@ interface AboutMeProps {
 
 const AboutMe: React.FC<AboutMeProps> = ({ sectionTitleTag = "div" }) => {
 	return (
-		<div className="container w">
+		<Container>
 			<section className={styles["about-me"]}>
 				<SectionTitle title="O mnie" alignment="right" tag={sectionTitleTag} />
 				<div className={`${styles["about-me__wrapper"]}`}>
@@ -42,7 +43,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ sectionTitleTag = "div" }) => {
 					</div>
 				</div>
 			</section>
-		</div>
+		</Container>
 	);
 };
 

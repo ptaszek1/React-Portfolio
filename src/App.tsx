@@ -10,6 +10,7 @@ import StickySocials from "./components/Socials/StickySocials";
 import socials from "./data/socials/Socials";
 import Footer from "./components/Footer/Footer";
 import Portfolio from "./pages/Portfolio/Portfolio";
+import Contact from "./pages/Contact/Contact";
 
 const App: React.FC = () => {
 	const element = useRoutes([
@@ -24,6 +25,10 @@ const App: React.FC = () => {
 		{
 			path: "/portfolio",
 			element: <Portfolio />,
+		},
+		{
+			path: "/kontakt",
+			element: <Contact />,
 		},
 	]);
 

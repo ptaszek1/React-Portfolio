@@ -49,35 +49,3 @@ body {
     text-transform: none;
     font-family: 'Josefin Sans', sans-serif;
 }
-
-.container.w {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-
-}
-
-.view-all {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 600;
-    position: relative;
-    color: #6B84FF;
-    &.right {
-        justify-content: flex-end;
-    }
-    &::before {
-        content: '';
-        width: 50px;
-        height: 2px;
-        background-color: #fff;
-        margin-right: 20px;
-    }
-}
-
-.grecaptcha-badge {
-    display: none !important;
-}

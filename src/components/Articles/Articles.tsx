@@ -3,6 +3,8 @@ import PortfolioData from "../../data/PortfolioData/PortfolioData";
 import ArticleItem from "./ArticleItem";
 import styles from "./Articles.module.scss";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import SeeMore from "../SeeMore/SeeMore";
+import Container from "../Container/Container";
 
 interface ArticlesProps {
 	sectionTitleTag?: keyof JSX.IntrinsicElements; // Allow any valid HTML tag for SectionTitle
@@ -10,21 +12,15 @@ interface ArticlesProps {
 
 const Articles: React.FC<ArticlesProps> = ({ sectionTitleTag = "div" }) => {
 	return (
-		<div className="container w">
+		<Container>
 			<section className={styles["my-work"]}>
 				<SectionTitle
 					title="Moja praca"
 					alignment="right"
 					tag={sectionTitleTag}
 				/>
-				<div className="row">
-					<div className="col-12">
-						<a href="/portfolio" className="view-all right">
-							Więcej
-						</a>
-					</div>
-				</div>
-				<div className="row">
+				<SeeMore to="/portfolio" align="right" title="Więcej" />
+				<div className={styles["my-work__wrapper"]}>
 					{PortfolioData.map((article) => (
 						<ArticleItem
 							key={article.id}
@@ -36,7 +32,7 @@ const Articles: React.FC<ArticlesProps> = ({ sectionTitleTag = "div" }) => {
 					))}
 				</div>
 			</section>
-		</div>
+		</Container>
 	);
 };
 

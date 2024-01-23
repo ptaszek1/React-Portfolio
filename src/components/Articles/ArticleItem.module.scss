@@ -1,0 +1,96 @@
+.my-work {
+    .view-all {
+        margin-bottom: 67px;
+    }
+    &__item {
+        padding: 0 15px;
+        @media(min-width: 768px) {
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+        }
+        &:hover {
+            .my-work__item-image {
+                &::after {
+                    left: 0;
+                }
+                img {
+                    transform: scale(1.4);
+                }
+            }
+            .my-work__item-image-text {
+                opacity: 1;
+                &::after {
+                    transform: translate(-50%,0);
+                }
+            }
+        }
+        &-image {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            &:after {
+                content: '';
+                position: absolute;
+                left: -100%;
+                top: 0;
+                background-color: #12152F;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                opacity: 0.7;
+                transition: .3s all ease-in-out;
+                border-radius: 10px;
+            }
+            &-text {
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 18px;
+                padding-bottom: 10px;
+                transition: .3s all ease-in-out;
+                opacity: 0;
+                z-index: 2;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-50%,15px);
+                    height: 2px;
+                    width: 50px;
+                    background-color: #fff;
+                    transition: .3s all ease-in-out;
+                }
+            }
+            img {
+                border-radius: 10px;
+                display: block;
+                transition: 0.5s all ease-in-out;
+            }
+        }
+        &-title {
+            font-size: 24px;
+            line-height: 29px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        &-technology {
+            font-size: 14px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            &::before {
+                content: '';
+                width: 30px;
+                height: 2px;
+                margin-right: 10px;
+                background-color: #fff;
+            }
+        }
+    }
+}

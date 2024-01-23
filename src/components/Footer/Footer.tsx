@@ -2,11 +2,12 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import socials from "../../data/socials/Socials";
 import SocialsItem from "../Socials/SocialsItems";
+import Container from "../Container/Container";
 
 const Footer: React.FC = () => {
 	return (
 		<footer className={styles.footer}>
-			<div className="container w">
+			<Container>
 				<div className={styles["footer__wrapper"]}>
 					<div className={styles["footer__socials"]}>
 						{socials.map(
@@ -34,7 +35,7 @@ const Footer: React.FC = () => {
 						© All Right Reserved By Mariusz Ptaszek
 					</div>
 				</div>
-			</div>
+			</Container>
 		</footer>
 	);
 };
