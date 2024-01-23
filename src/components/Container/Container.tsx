@@ -8,7 +8,7 @@ type ContainerProps = {
 class Container extends React.Component<ContainerProps> {
 	render() {
 		const { children } = this.props;
-		return <div className={`${styles[`container`]} ${styles[`w`]}`}>{children}</div>;
+		return <div className={`${styles["container"]}`}>{children}</div>;
 	}
 }
 
