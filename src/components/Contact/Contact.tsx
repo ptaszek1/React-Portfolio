@@ -2,6 +2,7 @@ import React from "react";
 import ContactForm from "../ContactForm/ContactForm";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import Container from "../Container/Container";
+import styles from "./Contact.module.scss";
 
 interface ContactProps {
 	imagePath: string;
@@ -9,14 +10,14 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ imagePath }) => {
 	return (
-		<section className="contact">
+		<section className={styles.contact}>
 			<Container>
 				<SectionTitle title="Napisz do mnie" />
-				<div className="contact__wrapper row">
-					<div className="contact__wrapper-form col-12 col-md-6 col-lg-7 order-2 order-md-1">
+				<div className={styles["contact__wrapper"]}>
+					<div className={styles["contact__wrapper-form"]}>
 						<ContactForm onSubmit={() => {}} />
 					</div>
-					<div className="contact__wrapper-image col-12 col-md-6 col-lg-5 order-1 order-md-2">
+					<div className={styles["contact__wrapper-image"]}>
 						<svg
 							id="Contact_Image"
 							data-name="Contact Image"

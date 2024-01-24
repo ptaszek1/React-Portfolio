@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import styles from "./ContactForm.module.scss";
+import Button from "../Button/Button";
 
 interface FormData {
 	name: string;
@@ -70,7 +72,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className={styles["contact-form"]}>
 			<div className="form-group">
 				<input
 					type="text"
@@ -118,9 +120,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 					<div className="invalid-feedback">{errors.message}</div>
 				)}
 			</div>
-			<button type="submit" className="btn btn-primary">
-				Wyślij wiadomość
-			</button>
+			<Button className="blue-btn">Wyślij wiadomość</Button>
 		</form>
 	);
 };

@@ -7,11 +7,19 @@
     &__wrapper {
         display: flex;
         align-items: flex-start;
+        flex-wrap: wrap;
         justify-content: space-between;
+        @media(min-width: 768px) {
+            flex-wrap: nowrap;
+        }
         &-text {
-            max-width: 50%;
-            flex: 0 0 50%;
-            padding-right: 55px;
+            max-width: 100%;
+            flex: 0 0 100%;
+            @media(min-width: 768px) {
+                max-width: 50%;
+                flex: 0 0 50%;
+                padding-right: 55px;
+            }
             &-hello {
                 font-size: 14px;
                 line-height: 24px;
@@ -28,21 +36,23 @@
                 margin-bottom: 53px;
             }
             &-buttons {
-                .transparent-btn {
-                    display: none;
-                    @media(min-width: 768px) {
-                        display: inline-block;
-                    }
+                display: none;
+                @media(min-width: 768px) {
+                    display: inline-block;
                 }
             }
         }
         &-skills {
-            max-width: 50%;
-            flex: 0 0 50%;
-            padding-left: 55px;
+            max-width: 100%;
+            flex: 0 0 100%;
             font-size: 14px;
             line-height: 24px;
             color: #E2E2E3;
+            @media(min-width: 768px) {
+                max-width: 50%;
+                flex: 0 0 50%;
+                padding-left: 55px;
+            }
         }
     }
 }

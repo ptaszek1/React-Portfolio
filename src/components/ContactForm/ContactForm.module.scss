@@ -1,0 +1,37 @@
+.contact-form {
+    input[type="text"], input[type="email"], textarea {
+        max-width: 100%;
+        width: 100%;
+        display: block;
+        background-color: transparent;
+        font-size: 14px;
+        line-height: 24px;
+        color: #707070;
+        font-family: "Josefin Sans",sans-serif;
+        border: none;
+        padding-bottom: 16px;
+        margin-bottom: 22px;
+        border-bottom: 1px solid #12152F;
+        resize: none;
+    }
+    textarea {
+        height: 100px;
+        margin-bottom: 45px;
+    }
+    input[type="submit"] {
+        background-color: #6B84FF;
+        font-size: 14px;
+        line-height: 18px;
+        font-family: "Josefin Sans",sans-serif;
+        border: none;
+        padding: 10px 25px 7px 25px;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .3s all ease-in-out;
+        &:hover {
+            background-color: #fff;
+            color: #6B84FF;
+        }
+    }
+}

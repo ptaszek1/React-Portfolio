@@ -1,0 +1,15 @@
+.my-work {
+    margin-bottom: 190px;
+    position: relative;
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.portfolio {
+    margin-top: 100px;
+    @media(min-width: 768px) {
+        margin-bottom: 190px;
+    }
+}
