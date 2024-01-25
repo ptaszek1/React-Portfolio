@@ -4,11 +4,7 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import Container from "../Container/Container";
 import styles from "./Contact.module.scss";
 
-interface ContactProps {
-	imagePath: string;
-}
-
-const Contact: React.FC<ContactProps> = ({ imagePath }) => {
+const Contact: React.FC = () => {
 	return (
 		<section className={styles.contact}>
 			<Container>

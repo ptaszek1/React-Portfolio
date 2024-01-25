@@ -21,6 +21,16 @@
         z-index: -1;
         padding-bottom: 8px;
     }
+    &.small {
+        margin-bottom: 30px;
+        font-size: 32px;
+        line-height: 41px;
+        &::after {
+            top: auto !important;
+            bottom: 0;
+            height: 50px;
+        }
+    }
 }
 
 .right {

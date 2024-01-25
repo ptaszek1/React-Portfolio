@@ -11,6 +11,7 @@ import socials from "./data/socials/Socials";
 import Footer from "./components/Footer/Footer";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import Contact from "./pages/Contact/Contact";
+import SingleBlogPage from "./pages/SingleBlog/SingleBlog";
 
 const App: React.FC = () => {
 	const element = useRoutes([
@@ -29,6 +30,10 @@ const App: React.FC = () => {
 		{
 			path: "/kontakt",
 			element: <Contact />,
+		},
+		{
+			path: "/portfolio/:slug",
+			element: <SingleBlogPage />,
 		},
 	]);
 

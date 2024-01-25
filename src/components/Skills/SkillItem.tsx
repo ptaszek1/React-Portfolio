@@ -7,8 +7,8 @@ interface SkillItemProps {
 	key: number;
 }
 
-const SkillItem: React.FC<SkillItemProps> = ({ name, level, key }) => (
-	<div className={styles["skills-item"]} key={key}>
+const SkillItem: React.FC<SkillItemProps> = ({ name, level }) => (
+	<div className={styles["skills-item"]}>
 		<div className={styles["skills-item-top"]} style={{ maxWidth: `${level}%` }}>
 			<div className={styles["skills-item-top-name"]}>{name}</div>
 			<div className={styles["skills-item-top-value"]}>{level}%</div>

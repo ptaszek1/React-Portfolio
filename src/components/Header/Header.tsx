@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 					</div>
 					<div className={styles["header__wrapper-menu"]}>
 						<Nav />
-						<Button className="blue-btn" to="/contact">
+						<Button className="blue-btn" to="/kontakt">
 							Pogadajmy
 						</Button>
 					</div>

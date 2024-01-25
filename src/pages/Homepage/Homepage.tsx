@@ -1,4 +1,3 @@
-import React from "react";
 import Hello from "../../components/Hello/Hello";
 import AboutMe from "../../components/AboutMe/AboutMe";
 import Services from "../../components/Services/Services";
@@ -11,7 +10,7 @@ const Homepage: React.FC = () => {
 			<Hello />
 			<AboutMe sectionTitleTag="h2" />
 			<Services sectionTitleTag="h2" />
-			<Articles sectionTitleTag="h2" />
+			<Articles sectionTitleTag="h2" limit={3} />
 			<Contact />
 		</>
 	);

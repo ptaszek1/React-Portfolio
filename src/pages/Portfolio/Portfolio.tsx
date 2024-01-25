@@ -16,7 +16,7 @@ const Portfolio: React.FC = () => {
 							<ArticleItem
 								key={article.id}
 								title={article.title}
-								image={article.mainImage}
+								image={article.smallImage}
 								technology={article.technology[0]}
 								slug={article.slug}
 							/>

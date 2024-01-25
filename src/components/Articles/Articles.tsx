@@ -8,9 +8,12 @@ import Container from "../Container/Container";
 
 interface ArticlesProps {
 	sectionTitleTag?: keyof JSX.IntrinsicElements; // Allow any valid HTML tag for SectionTitle
+	limit?: number; // Limit the number of items to display
 }
 
-const Articles: React.FC<ArticlesProps> = ({ sectionTitleTag = "div" }) => {
+const Articles: React.FC<ArticlesProps> = ({ sectionTitleTag = "div", limit }) => {
+	const articlesToDisplay = limit ? PortfolioData.slice(0, limit) : PortfolioData;
+
 	return (
 		<Container>
 			<section className={styles["my-work"]}>
@@ -21,11 +24,11 @@ const Articles: React.FC<ArticlesProps> = ({ sectionTitleTag = "div" }) => {
 				/>
 				<SeeMore to="/portfolio" align="right" title="Więcej" />
 				<div className={styles["my-work__wrapper"]}>
-					{PortfolioData.map((article) => (
+					{articlesToDisplay.map((article) => (
 						<ArticleItem
 							key={article.id}
 							title={article.title}
-							image={article.mainImage}
+							image={article.smallImage}
 							technology={article.technology[0]}
 							slug={article.slug}
 						/>

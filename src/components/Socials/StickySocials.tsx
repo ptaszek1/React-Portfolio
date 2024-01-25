@@ -3,8 +3,15 @@ import ReactDOM from "react-dom";
 import styles from "./StickySocials.module.scss";
 import SocialsItem from "./SocialsItems";
 
+interface Social {
+	id: number;
+	name: string;
+	link: string;
+	icon: React.ReactNode;
+}
+
 interface StickySocialsProps {
-	socials: [];
+	socials: Social[];
 }
 
 const StickySocials: React.FC<StickySocialsProps> = ({ socials }) => {
@@ -16,19 +23,12 @@ const StickySocials: React.FC<StickySocialsProps> = ({ socials }) => {
 
 	return ReactDOM.createPortal(
 		<div className={styles["sticky-socials"]}>
-			{socials.map(
-				(social: {
-					id: number;
-					link: string;
-					icon: React.ReactNode;
-					name: string;
-				}) => (
-					<div className={styles["sticky-socials__item"]} key={social.id}>
-						<SocialsItem link={social.link}>{social.icon}</SocialsItem>
-						<div className={styles["sticky-socials__item-line"]}></div>
-					</div>
-				)
-			)}
+			{socials.map((social) => (
+				<div className={styles["sticky-socials__item"]} key={social.id}>
+					<SocialsItem link={social.link}>{social.icon}</SocialsItem>
+					<div className={styles["sticky-socials__item-line"]}></div>
+				</div>
+			))}
 		</div>,
 		portalRoot
 	);

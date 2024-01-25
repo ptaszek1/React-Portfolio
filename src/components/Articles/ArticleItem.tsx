@@ -11,7 +11,7 @@ interface ArticleItemProps {
 
 const ArticleItem: React.FC<ArticleItemProps> = ({ title, image, technology, slug }) => {
 	return (
-		<NavLink to={`/portfolio${slug}`} className={styles["my-work__item"]}>
+		<NavLink to={`/portfolio/${slug}`} className={styles["my-work__item"]}>
 			<div className={styles["my-work__item-image"]}>
 				<picture>
 					<img src={image} alt={title} />

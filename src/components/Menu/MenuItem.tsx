@@ -10,7 +10,14 @@ type MenuItemProps = {
 const MenuItem: React.FC<MenuItemProps> = ({ title, to }) => {
 	return (
 		<li className={styles["menu-item"]}>
-			<NavLink to={to}>{title}</NavLink>
+			<NavLink
+				to={to}
+				className={({ isActive, isPending }) =>
+					isPending ? `${styles.pending}` : isActive ? `${styles.active}` : ""
+				}
+			>
+				{title}
+			</NavLink>
 		</li>
 	);
 };

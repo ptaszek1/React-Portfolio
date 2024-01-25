@@ -13,9 +13,7 @@
         color: #fff;
         padding: 10px 20px;
         display: block;
-    }
-    &.current_page_item {
-        a {
+        &.active {
             color: #6B84FF;
         }
     }
