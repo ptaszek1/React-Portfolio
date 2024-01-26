@@ -47,7 +47,10 @@ const App: React.FC = () => {
 			<StickySocials socials={socials} />
 			<Header />
 			<AnimatePresence mode="wait" initial={false}>
-				{React.cloneElement(element, { key: location.pathname })}
+				{React.cloneElement(element, {
+					key: location.pathname,
+					location: location,
+				})}
 			</AnimatePresence>
 			<Footer />
 		</>

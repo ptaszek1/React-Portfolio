@@ -71,7 +71,15 @@ const Hello: React.FC = () => {
 					</div>
 				</div>
 				<div className={styles["hello__image"]}>
-					<Image src={dottsImage} alt="dotts" />
+					<AnimatePresence>
+						<motion.img
+							src={dottsImage}
+							alt="dotts"
+							initial={{ width: 0, transform: "translateX(132px)" }}
+							animate={{ width: "100%", transform: "translateX(0)" }}
+							transition={{ duration: 0.5 }} // adjust duration as needed
+						/>
+					</AnimatePresence>
 				</div>
 			</section>
 		</Container>
