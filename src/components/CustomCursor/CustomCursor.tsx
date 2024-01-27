@@ -7,6 +7,7 @@ const CustomCursor: React.FC = () => {
 	const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 	const [isClickableHover, setIsClickableHover] = useState(false);
 	const [isMouseDown, setIsMouseDown] = useState(false);
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 	const variants = {
 		default: {
@@ -26,8 +27,19 @@ const CustomCursor: React.FC = () => {
 	};
 
 	useEffect(() => {
-		// Check if hover is supported
-		if (!window.matchMedia("(hover: none)").matches) {
+		const handleResize = () => {
+			setWindowWidth(window.innerWidth);
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
+	useEffect(() => {
+		if (!window.matchMedia("(hover: none)").matches && windowWidth > 768) {
 			const handleMouseMove = (event: MouseEvent) => {
 				setCursorPosition({ x: event.clientX, y: event.clientY });
 				setIsClickableHover(
@@ -52,13 +64,11 @@ const CustomCursor: React.FC = () => {
 				document.removeEventListener("mouseup", handleMouseUp);
 			};
 		} else {
-			// If hover is not supported, add a class to the body that sets the cursor to the standard cursor
 			document.body.classList.add("standard-cursor");
 		}
-	}, []);
+	}, [windowWidth]);
 
-	// If hover is not supported, don't render the custom cursor
-	if (window.matchMedia("(hover: none)").matches) {
+	if (window.matchMedia("(hover: none)").matches || windowWidth <= 768) {
 		return null;
 	}
 

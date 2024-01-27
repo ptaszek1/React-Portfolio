@@ -22,21 +22,13 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
 
 	const MotionTag = motion[Tag as keyof typeof motion];
 	const wrapperClassName = `${styles["section-title__wrapper"]} ${styles[alignment]}`;
-	const titleClassName = `${styles["section-title"]} ${size && styles[size]}`;
-
-	const initialPos =
-		alignment === "right" ? { x: 100, opacity: 0 } : { x: -100, opacity: 0 };
+	const titleClassName = `${styles["section-title"]} ${size && styles[size]} ${
+		inView ? styles["animated"] : ""
+	}`;
 
 	return (
 		<div className={wrapperClassName} ref={ref}>
-			<MotionTag
-				className={titleClassName}
-				initial={initialPos}
-				animate={inView ? { x: 0, opacity: 1 } : {}}
-				transition={{ duration: 1 }} // adjust duration as needed
-			>
-				{title}
-			</MotionTag>
+			<MotionTag className={titleClassName}>{title}</MotionTag>
 		</div>
 	);
 };

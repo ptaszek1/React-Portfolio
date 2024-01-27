@@ -2,7 +2,7 @@
   
 .circle {
     position: fixed;
-    z-index: 100;
+    z-index: 10000;
     display: flex;
     flex-flow: row;
     align-content: center;
@@ -22,7 +22,7 @@
 
 .inner {
     position: fixed;
-    z-index: 101;
+    z-index: 10001;
     top: 0;
     left: 0;
     height: 6px;
@@ -30,6 +30,7 @@
     border-radius: 200px;
     pointer-events: none;
     background-color: #fff;
+    padding-right: 0 !important;
 }
   
 .cursorText {

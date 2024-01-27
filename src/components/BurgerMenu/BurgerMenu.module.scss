@@ -1,0 +1,103 @@
+.burger-menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    background-color: #090A1A;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    transition: .3s all ease;
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+    &__top, &__middle, &__bottom {
+        max-width: 1200px;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 43px;
+        &-logo {
+            img {
+                max-width: 150px;
+            }
+        }
+        &-close {
+            // margin-top: 7px;
+            cursor: pointer;
+            svg {
+                width: 20px;
+            }
+        }
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 31px;
+        @media(max-width: 650px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &-socials {
+            display: flex;
+            @media(max-width: 650px) {
+                margin-bottom: 20px;
+                justify-content: center;
+            }
+            &-item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 35px;
+                height: 35px;
+                background-color: #fff;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: .3s all ease-in-out;
+                color: #000;
+                margin-right: 14px;
+                @media(max-width: 650px) {
+                    margin-right: 0px;
+                    margin: 0 7px;
+                }
+                &:hover {
+                    background-color: #6B84FF;
+                    svg {
+                        path {
+                            fill: #fff;
+                        }
+                    }
+                }
+                svg {
+                    max-width: 60%;
+                    path {
+                        transition: .3s all ease-in-out;
+                    }
+                }
+            }
+        }
+        &-copyrights {
+            font-size: 15px;
+            line-height: 24px;
+            font-family: "Open sans",sans-serif;
+            color: #B0B0B2;
+            display: flex;
+            align-items: center;
+            @media(max-width: 650px) {
+                max-width: 100%;
+                flex: 0 0 100%;
+                justify-content: center;
+            }
+        }
+    }
+}

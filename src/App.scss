@@ -25,9 +25,11 @@ html {
 }
 body {
     position: relative;
-    &.standard-cursor {
-        * {
-            cursor: inherit !important;
+    @media(min-width: 768px) {
+        &.standard-cursor {
+            * {
+                cursor: inherit !important;
+            }
         }
     }
 }
@@ -56,5 +58,7 @@ body {
 }
 
 *  {
-    cursor: none !important;
+    @media(min-width: 768px) {
+        cursor: none !important;
+    }
 }

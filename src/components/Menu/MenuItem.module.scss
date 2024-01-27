@@ -18,3 +18,21 @@
         }
     }
 }
+
+.burger-item {
+    display: block;
+    font-size: 45px;
+    line-height: 55px;
+    color: #fff;
+    text-align: center;
+    text-transform:inherit;
+    li {
+        margin-bottom: 20px;
+        a {
+            color: #fff;
+            &:hover {
+                color: #6B84FF;
+            }
+        }
+    }
+}

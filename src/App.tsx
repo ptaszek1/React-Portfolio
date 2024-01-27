@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useRoutes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
@@ -38,6 +38,10 @@ const App: React.FC = () => {
 	]);
 
 	const location = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location]);
 
 	if (!element) return null;
 
