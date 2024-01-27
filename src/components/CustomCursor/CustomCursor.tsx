@@ -26,30 +26,41 @@ const CustomCursor: React.FC = () => {
 	};
 
 	useEffect(() => {
-		const handleMouseMove = (event: MouseEvent) => {
-			setCursorPosition({ x: event.clientX, y: event.clientY });
-			setIsClickableHover(
-				Boolean(
-					(event.target as HTMLElement).closest(
-						"a, button, input, select, textarea"
+		// Check if hover is supported
+		if (!window.matchMedia("(hover: none)").matches) {
+			const handleMouseMove = (event: MouseEvent) => {
+				setCursorPosition({ x: event.clientX, y: event.clientY });
+				setIsClickableHover(
+					Boolean(
+						(event.target as HTMLElement).closest(
+							"a, button, input, select, textarea"
+						)
 					)
-				)
-			);
-		};
+				);
+			};
 
-		const handleMouseDown = () => setIsMouseDown(true);
-		const handleMouseUp = () => setIsMouseDown(false);
+			const handleMouseDown = () => setIsMouseDown(true);
+			const handleMouseUp = () => setIsMouseDown(false);
 
-		document.addEventListener("mousemove", handleMouseMove);
-		document.addEventListener("mousedown", handleMouseDown);
-		document.addEventListener("mouseup", handleMouseUp);
+			document.addEventListener("mousemove", handleMouseMove);
+			document.addEventListener("mousedown", handleMouseDown);
+			document.addEventListener("mouseup", handleMouseUp);
 
-		return () => {
-			document.removeEventListener("mousemove", handleMouseMove);
-			document.removeEventListener("mousedown", handleMouseDown);
-			document.removeEventListener("mouseup", handleMouseUp);
-		};
+			return () => {
+				document.removeEventListener("mousemove", handleMouseMove);
+				document.removeEventListener("mousedown", handleMouseDown);
+				document.removeEventListener("mouseup", handleMouseUp);
+			};
+		} else {
+			// If hover is not supported, add a class to the body that sets the cursor to the standard cursor
+			document.body.classList.add("standard-cursor");
+		}
 	}, []);
+
+	// If hover is not supported, don't render the custom cursor
+	if (window.matchMedia("(hover: none)").matches) {
+		return null;
+	}
 
 	return ReactDOM.createPortal(
 		<div className={styles.cursor}>

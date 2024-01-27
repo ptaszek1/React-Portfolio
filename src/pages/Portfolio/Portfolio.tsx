@@ -4,16 +4,11 @@ import ArticleItem from "../../components/Articles/ArticleItem";
 import styles from "./Portfolio.module.scss";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import Container from "../../components/Container/Container";
-import { motion } from "framer-motion";
+import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 
 const Portfolio: React.FC = () => {
 	return (
-		<motion.div
-			className={styles.portfolio}
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-		>
+		<MotionWrapper className={styles.portfolio}>
 			<Container>
 				<section className={styles["my-work"]}>
 					<SectionTitle title="Portfolio" />
@@ -30,7 +25,7 @@ const Portfolio: React.FC = () => {
 					</div>
 				</section>
 			</Container>
-		</motion.div>
+		</MotionWrapper>
 	);
 };
 

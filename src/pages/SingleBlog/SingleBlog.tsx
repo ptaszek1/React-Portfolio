@@ -13,6 +13,7 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 
 const SingleBlogPage: React.FC = () => {
 	const [index, setIndex] = useState<number>(-1);
@@ -27,70 +28,74 @@ const SingleBlogPage: React.FC = () => {
 		portfolioItem;
 
 	return (
-		<Container>
-			<div className={styles["single-article"]}>
-				<div className={styles["single-article__image"]}>
-					<img src={mainImage} alt={`${title} - main image`} />
-				</div>
-				<div className={styles["single-article__date"]}>{date}</div>
-				<h1 className={styles["single-article__title"]}>{title}</h1>
-				{description && (
-					<div className={styles["single-article__description"]}>
-						{description}
+		<MotionWrapper>
+			<Container>
+				<div className={styles["single-article"]}>
+					<div className={styles["single-article__image"]}>
+						<img src={mainImage} alt={`${title} - main image`} />
 					</div>
-				)}
-				<div className={styles["single-article__technologies"]}>
-					<SectionTitle title="Użyte technologie" size="small" />
-					{technology &&
-						technology.map((tech, index) => (
-							<div
-								className={styles["single-article__technologies-item"]}
-								key={index}
-							>
-								{tech}
-							</div>
-						))}
-				</div>
-				{link && (
-					<>
-						<SectionTitle title="Link" size="small" />
-						<a
-							href={link}
-							className={styles["single-article__link"]}
-							target="_blank"
-						>
-							{title}
-						</a>
-					</>
-				)}
-				{gallery && (
-					<>
-						<SectionTitle title="Galeria" size="small" />
-						<div className={styles["single-article__gallery"]}>
-							{gallery.map((image, index) => (
+					<div className={styles["single-article__date"]}>{date}</div>
+					<h1 className={styles["single-article__title"]}>{title}</h1>
+					{description && (
+						<div className={styles["single-article__description"]}>
+							{description}
+						</div>
+					)}
+					<div className={styles["single-article__technologies"]}>
+						<SectionTitle title="Użyte technologie" size="small" />
+						{technology &&
+							technology.map((tech, index) => (
 								<div
-									className={styles["single-article__gallery-item"]}
+									className={
+										styles["single-article__technologies-item"]
+									}
 									key={index}
 								>
-									<img
-										src={image.small}
-										alt={`${title} - image ${index + 1}`}
-										onClick={() => setIndex(index)}
-									/>
+									{tech}
 								</div>
 							))}
-						</div>
-						<Lightbox
-							slides={gallery.map((image) => ({ src: image.original }))}
-							open={index >= 0}
-							index={index}
-							close={() => setIndex(-1)}
-							plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-						/>
-					</>
-				)}
-			</div>
-		</Container>
+					</div>
+					{link && (
+						<>
+							<SectionTitle title="Link" size="small" />
+							<a
+								href={link}
+								className={styles["single-article__link"]}
+								target="_blank"
+							>
+								{title}
+							</a>
+						</>
+					)}
+					{gallery && (
+						<>
+							<SectionTitle title="Galeria" size="small" />
+							<div className={styles["single-article__gallery"]}>
+								{gallery.map((image, index) => (
+									<div
+										className={styles["single-article__gallery-item"]}
+										key={index}
+									>
+										<img
+											src={image.small}
+											alt={`${title} - image ${index + 1}`}
+											onClick={() => setIndex(index)}
+										/>
+									</div>
+								))}
+							</div>
+							<Lightbox
+								slides={gallery.map((image) => ({ src: image.original }))}
+								open={index >= 0}
+								index={index}
+								close={() => setIndex(-1)}
+								plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+							/>
+						</>
+					)}
+				</div>
+			</Container>
+		</MotionWrapper>
 	);
 };
 

@@ -5,6 +5,7 @@ import Articles from "../../components/Articles/Articles";
 import Contact from "../../components/Contact/Contact";
 import { motion } from "framer-motion";
 import styles from "./Homepage.module.scss";
+import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 
 const draw = {
 	hidden: { pathLength: 0, opacity: 0 },
@@ -23,11 +24,7 @@ const draw = {
 
 const Homepage: React.FC = () => {
 	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-		>
+		<MotionWrapper>
 			<div className={styles["geometry-top-left"]}>
 				<motion.svg
 					width="338"
@@ -62,7 +59,7 @@ const Homepage: React.FC = () => {
 			<Services sectionTitleTag="h2" />
 			<Articles sectionTitleTag="h2" limit={3} />
 			<Contact />
-		</motion.div>
+		</MotionWrapper>
 	);
 };
 

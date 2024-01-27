@@ -3,7 +3,7 @@ import styles from "./Contact.module.scss";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import Container from "../../components/Container/Container";
-import { motion } from "framer-motion";
+import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 
 interface ContactProps {
 	sectionTitleTag?: keyof JSX.IntrinsicElements;
@@ -16,12 +16,7 @@ const Contact: React.FC<ContactProps> = ({ sectionTitleTag = "h1" }) => {
 	};
 
 	return (
-		<motion.div
-			className={styles.contact}
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-		>
+		<MotionWrapper className={styles.contact}>
 			<Container>
 				<SectionTitle title="Kontakt" alignment="left" tag={sectionTitleTag} />
 				<div className={styles["contact__info"]}>
@@ -54,7 +49,7 @@ const Contact: React.FC<ContactProps> = ({ sectionTitleTag = "h1" }) => {
 					</div>
 				</div>
 			</Container>
-		</motion.div>
+		</MotionWrapper>
 	);
 };
 

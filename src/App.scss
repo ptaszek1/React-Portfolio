@@ -25,6 +25,11 @@ html {
 }
 body {
     position: relative;
+    &.standard-cursor {
+        * {
+            cursor: inherit !important;
+        }
+    }
 }
 ul, ol {
     padding:0;
