@@ -21,6 +21,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ openStatus, isOpen }) => (
 				initial={{ y: "-100%" }}
 				animate={{ y: "0%" }}
 				exit={{ y: "-100%" }}
+				transition={{ duration: 0.2 }}
 			>
 				<div className={styles["burger-menu__top"]}>
 					<div className={styles["burger-menu__top-logo"]}>
@@ -47,10 +48,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ openStatus, isOpen }) => (
 						</svg>
 					</div>
 				</div>
-				<motion.div
-					className={styles["burger-menu__middle"]}
-					transition={{ delay: 0.4 }}
-				>
+				<div className={styles["burger-menu__middle"]}>
 					<ul>
 						{MenuData.map((item, index) => (
 							<MenuItem
@@ -59,18 +57,20 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ openStatus, isOpen }) => (
 								to={item.to}
 								customClass="burger-item"
 								isMotion={true}
-								initial={{
-									opacity: 0,
-									y: "-10px",
-								}}
+								initial={{ opacity: 0, y: "-50px" }}
 								animate={{ opacity: 1, y: "0px" }}
-								exit={{ opacity: 0, y: "-10px" }}
-								transition={{ delay: index * 0.3 }}
+								transition={{ delay: index * 0.15 }}
+								onClick={openStatus}
 							/>
 						))}
 					</ul>
-				</motion.div>
-				<div className={styles["burger-menu__bottom"]}>
+				</div>
+				<motion.div
+					className={styles["burger-menu__bottom"]}
+					initial={{ opacity: 0, y: 50 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.5 }}
+				>
 					<div className={styles["burger-menu__bottom-socials"]}>
 						{socials.map(
 							(social: {
@@ -93,7 +93,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ openStatus, isOpen }) => (
 					<div className={styles["burger-menu__bottom-copyrights"]}>
 						© All Right Reserved By Mariusz Ptaszek
 					</div>
-				</div>
+				</motion.div>
 			</motion.div>
 		)}
 	</AnimatePresence>

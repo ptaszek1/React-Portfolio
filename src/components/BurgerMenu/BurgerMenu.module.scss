@@ -9,7 +9,7 @@
     z-index: 20;
     top: 0;
     left: 0;
-    transition: .3s all ease;
+    overflow: hidden;
     &.show {
         opacity: 1;
         pointer-events: all;
