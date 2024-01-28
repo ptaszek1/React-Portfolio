@@ -58,7 +58,7 @@ const Header: React.FC = () => {
 					</div>
 				</Container>
 			</header>
-			{openBurger && <BurgerMenu openStatus={closeBurger} />}
+			<BurgerMenu openStatus={closeBurger} isOpen={openBurger} />
 		</>
 	);
 };

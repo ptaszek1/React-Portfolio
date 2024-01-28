@@ -21,11 +21,15 @@
 
 .burger-item {
     display: block;
-    font-size: 45px;
-    line-height: 55px;
+    font-size: 35px;
+    line-height: 45px;
     color: #fff;
     text-align: center;
     text-transform:inherit;
+    @media(min-width: 575px) {
+        font-size: 45px;
+        line-height: 55px;
+    }
     li {
         margin-bottom: 20px;
         a {
