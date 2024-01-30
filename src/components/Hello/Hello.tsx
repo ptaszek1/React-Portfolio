@@ -8,13 +8,16 @@ import CategoryTitle from "../CategoryTitle/CategoryTitle";
 import leftBottomLine from "../../assets/images/left-bottom-line.png";
 import dottsImage from "../../assets/images/dotts.png";
 import Container from "../Container/Container";
+import Circle from "../Svg/Circle";
 
 const Hello: React.FC = () => {
 	return (
 		<Container>
 			<section className={`${styles.hello}`}>
 				<div className={styles["hello__text"]}>
-					<div className={styles["hello__text-circle"]}></div>
+					<div className={styles["hello__text-circle"]}>
+						<Circle size={153} border={5} />
+					</div>
 					<AnimatePresence>
 						<motion.div
 							animate={{ x: 0, opacity: 1 }}

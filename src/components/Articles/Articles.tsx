@@ -5,18 +5,29 @@ import styles from "./Articles.module.scss";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import SeeMore from "../SeeMore/SeeMore";
 import Container from "../Container/Container";
+import ManyShapes from "../Svg/ManyShapes";
 
 interface ArticlesProps {
 	sectionTitleTag?: keyof JSX.IntrinsicElements; // Allow any valid HTML tag for SectionTitle
 	limit?: number; // Limit the number of items to display
+	showShapes?: boolean;
 }
 
-const Articles: React.FC<ArticlesProps> = ({ sectionTitleTag = "div", limit }) => {
+const Articles: React.FC<ArticlesProps> = ({
+	sectionTitleTag = "div",
+	limit,
+	showShapes = false,
+}) => {
 	const articlesToDisplay = limit ? PortfolioData.slice(0, limit) : PortfolioData;
 
 	return (
 		<Container>
 			<section className={styles["my-work"]}>
+				{showShapes && (
+					<div className={styles["my-work__shapes"]}>
+						<ManyShapes />
+					</div>
+				)}
 				<SectionTitle
 					title="Moja praca"
 					alignment="right"

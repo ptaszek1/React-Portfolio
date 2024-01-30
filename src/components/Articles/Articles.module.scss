@@ -5,4 +5,12 @@
         display: flex;
         flex-wrap: wrap;
     }
+    &__shapes {
+        position: absolute;
+        left: -22px;
+        top: -113px;
+        width: 386px;
+        height: 205px;
+        max-width: 100%;
+    }
 }

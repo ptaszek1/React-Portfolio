@@ -9,13 +9,15 @@
     left: -100px;
     pointer-events: none;
     z-index: -1;
-    svg {
-        position: relative;
-        polygon {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        }
+    &-circle {
+        transform: rotate(150deg);
+    }
+    &-triangle {
+        position: absolute;
+        bottom: -50px;
+        right: -20px;
+        pointer-events: none;
+        z-index: -1;
     }
 }
 .geometry-bottom-left {
