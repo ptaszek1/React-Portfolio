@@ -8,6 +8,7 @@ type MenuItemProps = {
 	to: string;
 	customClass?: string;
 	isMotion?: boolean;
+	onClick?: () => void;
 } & MotionProps;
 
 const MenuItem: React.FC<MenuItemProps> = ({
@@ -15,25 +16,43 @@ const MenuItem: React.FC<MenuItemProps> = ({
 	to,
 	customClass,
 	isMotion,
+	onClick,
 	...motionProps
 }) => {
 	const activeClass = customClass ? styles[customClass] : "";
 	const pendingClass = customClass ? styles.pending : "";
 
-	const LiComponent = isMotion ? motion.li : "li";
-
-	return (
-		<LiComponent className={`${styles["menu-item"]} ${activeClass}`} {...motionProps}>
-			<NavLink
-				to={to}
-				className={({ isActive, isPending }) =>
-					isPending ? pendingClass : isActive ? styles.active : ""
-				}
+	if (isMotion) {
+		return (
+			<motion.li
+				className={`${styles["menu-item"]} ${activeClass}`}
+				{...motionProps}
+				onClick={onClick}
 			>
-				{title}
-			</NavLink>
-		</LiComponent>
-	);
+				<NavLink
+					to={to}
+					className={({ isActive, isPending }) =>
+						isPending ? pendingClass : isActive ? styles.active : ""
+					}
+				>
+					{title}
+				</NavLink>
+			</motion.li>
+		);
+	} else {
+		return (
+			<li className={`${styles["menu-item"]} ${activeClass}`} onClick={onClick}>
+				<NavLink
+					to={to}
+					className={({ isActive, isPending }) =>
+						isPending ? pendingClass : isActive ? styles.active : ""
+					}
+				>
+					{title}
+				</NavLink>
+			</li>
+		);
+	}
 };
 
 export default MenuItem;

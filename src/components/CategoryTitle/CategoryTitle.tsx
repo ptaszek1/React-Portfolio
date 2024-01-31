@@ -2,11 +2,10 @@ import React from "react";
 import styles from "./CategoryTitle.module.scss";
 
 type CategoryTitleProps = {
-	className?: string;
 	children: React.ReactNode;
 };
 
-const CategoryTitle: React.FC<CategoryTitleProps> = ({ children, className }) => {
+const CategoryTitle: React.FC<CategoryTitleProps> = ({ children }) => {
 	return <div className={styles["category-title"]}>{children}</div>;
 };
 

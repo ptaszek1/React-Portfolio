@@ -12,6 +12,7 @@ import Footer from "./components/Footer/Footer";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import Contact from "./pages/Contact/Contact";
 import SingleBlogPage from "./pages/SingleBlog/SingleBlog";
+import PageTitleSetter from "./components/PageTitleSetter/PageTitleSetter";
 
 const App: React.FC = () => {
 	const element = useRoutes([
@@ -47,6 +48,7 @@ const App: React.FC = () => {
 
 	return (
 		<>
+			<PageTitleSetter title="Mariusz Ptaszek - Frontend Developer" />
 			<CustomCursor />
 			<StickySocials socials={socials} />
 			<Header />

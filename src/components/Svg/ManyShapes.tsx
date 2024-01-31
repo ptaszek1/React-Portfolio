@@ -38,7 +38,7 @@ const AnimatedSVG: React.FC = () => {
 					transform="translate(470.675 2888.425) rotate(-45)"
 					fill="none"
 					stroke="#12152f"
-					stroke-width="3"
+					strokeWidth="3"
 				>
 					<circle cx="12" cy="12" r="12" stroke="none" />
 					<circle cx="12" cy="12" r="10.5" fill="none" />
@@ -49,7 +49,7 @@ const AnimatedSVG: React.FC = () => {
 					transform="translate(705.675 2716.425) rotate(-45)"
 					fill="none"
 					stroke="#12152f"
-					stroke-width="3"
+					strokeWidth="3"
 				>
 					<circle cx="12" cy="12" r="12" stroke="none" />
 					<circle cx="12" cy="12" r="10.5" fill="none" />
@@ -61,7 +61,7 @@ const AnimatedSVG: React.FC = () => {
 					transform="translate(88.209 40)"
 					fill="none"
 					stroke="#12152f"
-					stroke-width="4"
+					strokeWidth="4"
 				/>
 			</g>
 		</motion.svg>

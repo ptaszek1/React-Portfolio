@@ -4,6 +4,7 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import Container from "../../components/Container/Container";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
+import PageTitleSetter from "../../components/PageTitleSetter/PageTitleSetter";
 
 interface ContactProps {
 	sectionTitleTag?: keyof JSX.IntrinsicElements;
@@ -17,6 +18,7 @@ const Contact: React.FC<ContactProps> = ({ sectionTitleTag = "h1" }) => {
 
 	return (
 		<MotionWrapper className={styles.contact}>
+			<PageTitleSetter title="Mariusz Ptaszek - Kontakt" />
 			<Container>
 				<SectionTitle title="Kontakt" alignment="left" tag={sectionTitleTag} />
 				<div className={styles["contact__info"]}>

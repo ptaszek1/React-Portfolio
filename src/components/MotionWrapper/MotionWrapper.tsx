@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import styles from "./MotionWrapper.module.scss"; // replace with your actual styles file path
 
 interface MotionWrapperProps {
 	children: React.ReactNode;

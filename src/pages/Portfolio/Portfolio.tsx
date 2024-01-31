@@ -5,10 +5,12 @@ import styles from "./Portfolio.module.scss";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import Container from "../../components/Container/Container";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
+import PageTitleSetter from "../../components/PageTitleSetter/PageTitleSetter";
 
 const Portfolio: React.FC = () => {
 	return (
 		<MotionWrapper className={styles.portfolio}>
+			<PageTitleSetter title="Mariusz Ptaszek - Portfolio" />
 			<Container>
 				<section className={styles["my-work"]}>
 					<SectionTitle title="Portfolio" />

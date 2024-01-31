@@ -7,10 +7,12 @@ import styles from "./Homepage.module.scss";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 import Circle from "../../components/Svg/Circle";
 import Triangle from "../../components/Svg/Triangle";
+import PageTitleSetter from "../../components/PageTitleSetter/PageTitleSetter";
 
 const Homepage: React.FC = () => {
 	return (
 		<MotionWrapper>
+			<PageTitleSetter title="Mariusz Ptaszek - Frontend Developer" />
 			<div className={styles["geometry-top-left"]}>
 				<div className={styles["geometry-top-left-circle"]}>
 					<Circle size={338} border={8} />
