@@ -1,0 +1,17 @@
+.geometry-top-left {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    pointer-events: none;
+    z-index: -1;
+    &-circle {
+        transform: rotate(150deg);
+    }
+    &-triangle {
+        position: absolute;
+        bottom: -50px;
+        right: -20px;
+        pointer-events: none;
+        z-index: -1;
+    }
+}

@@ -15,10 +15,13 @@
         margin-bottom: 22px;
         border-bottom: 1px solid #12152F;
         resize: none;
+        &.is-invalid {
+            border-bottom: 1px solid #ff3333;
+        }
     }
     textarea {
         height: 100px;
-        margin-bottom: 45px;
+        margin-bottom: 22px;
     }
     input[type="submit"] {
         background-color: #6B84FF;
@@ -35,5 +38,10 @@
             background-color: #fff;
             color: #6B84FF;
         }
+    }
+    .invalid {
+        font-size: 10px;
+        margin-bottom: 10px;
+        color: #ff3333;
     }
 }

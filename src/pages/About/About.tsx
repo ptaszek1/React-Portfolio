@@ -5,12 +5,14 @@ import styles from "./About.module.scss";
 import Container from "../../components/Container/Container";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 import PageTitleSetter from "../../components/PageTitleSetter/PageTitleSetter";
+import GeometryTopLeft from "../../components/Svg/GeometryTopLeft";
 
 interface AboutProps {}
 
 const About: React.FC<AboutProps> = () => {
 	return (
 		<MotionWrapper className={styles["about-me"]}>
+			<GeometryTopLeft />
 			<PageTitleSetter title="Mariusz Ptaszek - O mnie" />
 			<Container>
 				<AboutMe sectionTitleTag="h1" />

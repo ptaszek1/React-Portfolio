@@ -1,22 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const AnimatedSVG: React.FC = () => {
-	const { ref, inView } = useInView({
-		triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
-	});
-
 	return (
-		<motion.svg
+		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="386.773"
 			height="205.941"
 			viewBox="0 0 386.773 205.941"
-			initial={{ opacity: 0, y: "-50px" }}
-			animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : "-50px" }}
-			transition={{ delay: 1 }}
-			ref={ref}
 		>
 			<g id="Shap" transform="translate(-352.843 -2699.454)">
 				<g
@@ -64,7 +54,7 @@ const AnimatedSVG: React.FC = () => {
 					strokeWidth="4"
 				/>
 			</g>
-		</motion.svg>
+		</svg>
 	);
 };
 
