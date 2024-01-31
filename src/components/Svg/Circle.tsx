@@ -4,9 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 interface CircleProps {
 	size: number;
 	border: number;
+	inView?: boolean;
 }
 
-const Circle: React.FC<CircleProps> = ({ size, border }) => {
+const Circle: React.FC<CircleProps> = ({ size, border, inView = true }) => {
 	return (
 		<AnimatePresence>
 			<motion.svg
@@ -22,7 +23,7 @@ const Circle: React.FC<CircleProps> = ({ size, border }) => {
 					strokeWidth={border}
 					fill="transparent"
 					initial={{ pathLength: 0 }}
-					animate={{ pathLength: 1 }}
+					animate={inView ? { pathLength: 1 } : {}}
 					transition={{
 						duration: 1,
 					}}

@@ -45,6 +45,7 @@
     }
     &__text {
         max-width: 682px;
+        width: 100%;
         position: relative;
         &-circle {
             position: absolute;
@@ -72,8 +73,8 @@
             }
         }
         &-title {
-            font-size: 69px;
-            line-height: 69px;
+            font-size: 50px;
+            line-height: 50px;
             @media(max-width: 600px) {
                 font-size: 45px;
                 line-height: 45px;
@@ -89,6 +90,12 @@
             &-bold {
                 font-weight: 700;
                 margin-bottom: 30px;
+                overflow: hidden;
+                white-space: nowrap;
+                span {
+                    display: inline-block;
+                    width: 300px;
+                }
             }
         }
         &-buttons {

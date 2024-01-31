@@ -10,7 +10,7 @@ const GeometryTopLeft: React.FC = () => {
 				<Circle size={338} border={8} />
 			</div>
 			<div className={styles["geometry-top-left-triangle"]}>
-				<Triangle size={167} border={5} points="83.5,0 167,145 0,145" />
+				<Triangle size={167} border={5} />
 			</div>
 		</div>
 	);

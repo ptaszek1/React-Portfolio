@@ -6,6 +6,7 @@ import Contact from "../../components/Contact/Contact";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 import PageTitleSetter from "../../components/PageTitleSetter/PageTitleSetter";
 import GeometryTopLeft from "../../components/Svg/GeometryTopLeft";
+import GeometryBottomLeft from "../../components/Svg/GeometryBottomLeft";
 
 const Homepage: React.FC = () => {
 	return (
@@ -17,6 +18,7 @@ const Homepage: React.FC = () => {
 			<Services sectionTitleTag="h2" />
 			<Articles sectionTitleTag="h2" limit={3} showShapes={true} />
 			<Contact />
+			<GeometryBottomLeft />
 		</MotionWrapper>
 	);
 };

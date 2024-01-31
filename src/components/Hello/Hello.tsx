@@ -9,6 +9,7 @@ import leftBottomLine from "../../assets/images/left-bottom-line.png";
 import dottsImage from "../../assets/images/dotts.png";
 import Container from "../Container/Container";
 import Circle from "../Svg/Circle";
+import TypingText from "../TypingText/TypingText";
 
 const Hello: React.FC = () => {
 	return (
@@ -43,7 +44,13 @@ const Hello: React.FC = () => {
 								Jestem Mariusz
 							</div>
 							<div className={styles["hello__text-title-bold"]}>
-								Front-end Developer
+								Programista{" "}
+								<TypingText
+									texts={["Front-end", "Wordpress"]}
+									speed={10}
+									delay={2000}
+									duration={400}
+								/>
 							</div>
 						</motion.div>
 					</AnimatePresence>

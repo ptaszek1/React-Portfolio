@@ -12,8 +12,8 @@ interface AboutProps {}
 const About: React.FC<AboutProps> = () => {
 	return (
 		<MotionWrapper className={styles["about-me"]}>
-			<GeometryTopLeft />
 			<PageTitleSetter title="Mariusz Ptaszek - O mnie" />
+			<GeometryTopLeft />
 			<Container>
 				<AboutMe sectionTitleTag="h1" />
 				<Services />
