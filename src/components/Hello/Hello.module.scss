@@ -74,14 +74,14 @@
         }
         &-title {
             font-size: 50px;
-            line-height: 50px;
+            line-height: 60px;
             @media(max-width: 600px) {
                 font-size: 45px;
-                line-height: 45px;
+                line-height: 55px;
             }
             @media(max-width: 500px) {
                 font-size: 35px;
-                line-height: 35px;
+                line-height: 45px;
             }
             &-light {
                 font-weight: 300;
@@ -94,7 +94,9 @@
                 white-space: nowrap;
                 span {
                     display: inline-block;
-                    width: 300px;
+                    @media(max-width: 600px) {
+                        display: block;
+                    }
                 }
             }
         }
