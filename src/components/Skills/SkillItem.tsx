@@ -11,7 +11,7 @@ interface SkillItemProps {
 
 const SkillItem: React.FC<SkillItemProps> = ({ name, level }) => {
 	const { ref, inView } = useInView({
-		triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
+		triggerOnce: true,
 	});
 
 	return (
@@ -26,7 +26,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ name, level }) => {
 						className={styles["skills-item-bar-inside"]}
 						initial={{ width: 0, opacity: 0 }}
 						animate={inView ? { width: `${level}%`, opacity: 1 } : {}}
-						transition={{ duration: 1 }} // adjust duration as needed
+						transition={{ duration: 1 }}
 					></motion.div>
 				</motion.div>
 			</AnimatePresence>

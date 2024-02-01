@@ -7,7 +7,7 @@ import Skills from "../Skills/Skills";
 import Container from "../Container/Container";
 
 interface AboutMeProps {
-	sectionTitleTag?: keyof JSX.IntrinsicElements; // Allow any valid HTML tag for SectionTitle
+	sectionTitleTag?: keyof JSX.IntrinsicElements;
 }
 
 const AboutMe: React.FC<AboutMeProps> = ({ sectionTitleTag = "div" }) => {

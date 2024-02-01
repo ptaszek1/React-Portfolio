@@ -1,6 +1,9 @@
 .my-work {
-    margin-bottom: 190px;
+    margin-bottom: 75px;
     position: relative;
+    @media(min-width: 768px) {
+        margin-bottom: 190px;
+    }
     &__wrapper {
         display: flex;
         flex-wrap: wrap;

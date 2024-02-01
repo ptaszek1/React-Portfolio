@@ -1,6 +1,9 @@
 .about-me {
-    margin-bottom: 190px;
+    margin-bottom: 75px;
     color: #fff;
+    @media(min-width: 768px) {
+        margin-bottom: 190px;
+    }
     &.single-page {
         margin-top: 190px;
     }

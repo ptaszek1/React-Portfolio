@@ -8,8 +8,8 @@ import Container from "../Container/Container";
 import ManyShapes from "../Svg/ManyShapes";
 
 interface ArticlesProps {
-	sectionTitleTag?: keyof JSX.IntrinsicElements; // Allow any valid HTML tag for SectionTitle
-	limit?: number; // Limit the number of items to display
+	sectionTitleTag?: keyof JSX.IntrinsicElements;
+	limit?: number;
 	showShapes?: boolean;
 }
 

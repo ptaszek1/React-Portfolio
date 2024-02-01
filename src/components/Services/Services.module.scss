@@ -1,5 +1,8 @@
 .my-services {
-    margin-bottom: 190px;
+    margin-bottom: 75px;
+    @media(min-width: 768px) {
+        margin-bottom: 190px;
+    }
     &__row {
         margin: 0 -15px;
         display: flex;

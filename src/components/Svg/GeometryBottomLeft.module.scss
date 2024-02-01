@@ -5,6 +5,10 @@
     pointer-events: none;
     z-index: -1;
     max-width: 252px;
+    display: none;
+    @media(min-width: 1024px) {
+        display: block;
+    }
     &-circle {
         transform: rotate(180deg);
     }

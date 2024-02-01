@@ -10,7 +10,7 @@ interface Skill {
 }
 
 interface SkillsProps {
-	skills?: Skill[]; // Make the skills prop optional
+	skills?: Skill[];
 }
 
 const Skills: React.FC<SkillsProps> = ({ skills = SkillsData }) => {
