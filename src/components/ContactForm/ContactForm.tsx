@@ -22,6 +22,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 	});
 
 	const [errors, setErrors] = useState<Partial<FormData>>({});
+	const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
 	const validateForm = () => {
 		const newErrors: Partial<FormData> = {};
@@ -44,16 +45,65 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 			newErrors.message = "Treść jest polem wymaganym.";
 		}
 
+		if (/[^a-zA-Z0-9 ]/.test(formData.name)) {
+			newErrors.name = "Imię zawiera niedozwolone znaki.";
+		}
+
+		if (/[^a-zA-Z0-9 ]/.test(formData.subject)) {
+			newErrors.subject = "Tytuł zawiera niedozwolone znaki.";
+		}
+
+		if (
+			formData.message.includes("http://") ||
+			formData.message.includes("https://")
+		) {
+			newErrors.message = "Treść nie może zawierać linków.";
+		}
+
 		setErrors(newErrors);
 
 		return Object.keys(newErrors).length === 0;
 	};
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		if (validateForm()) {
+		if (!validateForm()) {
+			return;
+		}
+
+		try {
+			const formDataEntries = Object.entries(formData);
+			const response = await fetch(
+				"http://mariuszptaszek.pl/contactForm/contact.php",
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded",
+					},
+					body: new URLSearchParams(formDataEntries).toString(),
+				}
+			);
+
+			if (!response.ok) {
+				throw new Error(`Błąd serwera: ${response.statusText}`);
+			}
+
+			const text = await response.text();
+			const data = JSON.parse(text.trim());
+
+			if (!data.success) {
+				throw new Error(`Błąd serwera: ${data.message}`);
+			}
+
 			onSubmit(formData);
+			setSubmitStatus("Wiadomość została wysłana. Dziękuje!");
+		} catch (error) {
+			if (error instanceof Error) {
+				setSubmitStatus(`Error: ${error.message}`);
+			} else {
+				setSubmitStatus("Błąd serwera. Spróbuj ponownie później.");
+			}
 		}
 	};
 
@@ -79,7 +129,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 					className={`${styles["form-control"]} ${
 						errors.name ? styles["is-invalid"] : ""
 					}`}
-					placeholder="Imię"
+					placeholder="Imię i nazwisko"
 					name="name"
 					value={formData.name}
 					onChange={handleChange}
@@ -92,7 +142,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 					className={`${styles["form-control"]} ${
 						errors.email ? styles["is-invalid"] : ""
 					}`}
-					placeholder="Email"
+					placeholder="Adres E-mail"
 					name="email"
 					value={formData.email}
 					onChange={handleChange}
@@ -105,7 +155,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 					className={`${styles["form-control"]} ${
 						errors.subject ? styles["is-invalid"] : ""
 					}`}
-					placeholder="Tytuł"
+					placeholder="Tytuł wiadomości"
 					name="subject"
 					value={formData.subject}
 					onChange={handleChange}
@@ -117,7 +167,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 					className={`${styles["form-control"]} ${
 						errors.message ? styles["is-invalid"] : ""
 					}`}
-					placeholder="Treść"
+					placeholder="Treść wiadomości"
 					name="message"
 					value={formData.message}
 					onChange={handleChange}
@@ -125,6 +175,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 				{errors.message && <div className={styles.invalid}>{errors.message}</div>}
 			</div>
 			<Button className="blue-btn">Wyślij wiadomość</Button>
+			{submitStatus && (
+				<div
+					className={`${styles["submit-status"]} ${
+						submitStatus.includes("Error") ? styles.error : styles.success
+					}`}
+				>
+					{submitStatus}
+				</div>
+			)}
 		</form>
 	);
 };
