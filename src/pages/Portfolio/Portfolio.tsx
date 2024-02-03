@@ -7,12 +7,14 @@ import Container from "../../components/Container/Container";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 import PageTitleSetter from "../../components/PageTitleSetter/PageTitleSetter";
 import GeometryTopLeft from "../../components/Svg/GeometryTopLeft";
+import MetaDescriptionSetter from "../../components/MetaDescriptionSetter/MetaDescriptionSetter";
 
 const Portfolio: React.FC = () => {
 	return (
 		<MotionWrapper className={styles.portfolio}>
 			<GeometryTopLeft />
 			<PageTitleSetter title="Mariusz Ptaszek - Portfolio" />
+			<MetaDescriptionSetter description="Zobacz moje portfolio. Znajdziesz tutaj część moich projektów, które wykonałem w ciągu ostatnich lat. Każdy z nich jest inny, ale wszystkie są zrobione z pasją i zaangażowaniem." />
 			<Container>
 				<section className={styles["my-work"]}>
 					<SectionTitle title="Portfolio" />

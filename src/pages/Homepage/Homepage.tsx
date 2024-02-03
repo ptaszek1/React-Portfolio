@@ -7,11 +7,13 @@ import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 import PageTitleSetter from "../../components/PageTitleSetter/PageTitleSetter";
 import GeometryTopLeft from "../../components/Svg/GeometryTopLeft";
 import GeometryBottomLeft from "../../components/Svg/GeometryBottomLeft";
+import MetaDescriptionSetter from "../../components/MetaDescriptionSetter/MetaDescriptionSetter";
 
 const Homepage: React.FC = () => {
 	return (
 		<MotionWrapper>
 			<PageTitleSetter title="Mariusz Ptaszek - Frontend Developer" />
+			<MetaDescriptionSetter description="Front-end developer. Programista z 7-letnim doświadczeniem praktycznym, specjalizującym się w tworzeniu stron internetowych." />
 			<GeometryTopLeft />
 			<Hello />
 			<AboutMe sectionTitleTag="h2" />

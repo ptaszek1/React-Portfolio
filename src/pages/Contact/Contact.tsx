@@ -6,6 +6,7 @@ import Container from "../../components/Container/Container";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 import PageTitleSetter from "../../components/PageTitleSetter/PageTitleSetter";
 import GeometryTopLeft from "../../components/Svg/GeometryTopLeft";
+import MetaDescriptionSetter from "../../components/MetaDescriptionSetter/MetaDescriptionSetter";
 
 interface ContactProps {
 	sectionTitleTag?: keyof JSX.IntrinsicElements;
@@ -21,6 +22,7 @@ const Contact: React.FC<ContactProps> = ({ sectionTitleTag = "h1" }) => {
 		<MotionWrapper className={styles.contact}>
 			<GeometryTopLeft />
 			<PageTitleSetter title="Mariusz Ptaszek - Kontakt" />
+			<MetaDescriptionSetter description="Masz pytanie? Napisz do mnie. Chcesz zrealizować projekt na podstawie pliku xd,figma,sketch lub masz jakiekolwiek inne pytanie? Zapraszam serdecznie do kontaktu." />
 			<Container>
 				<SectionTitle title="Kontakt" alignment="left" tag={sectionTitleTag} />
 				<div className={styles["contact__info"]}>

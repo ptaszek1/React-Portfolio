@@ -14,6 +14,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import MotionWrapper from "../../components/MotionWrapper/MotionWrapper";
 import PageTitleSetter from "../../components/PageTitleSetter/PageTitleSetter";
+import MetaDescriptionSetter from "../../components/MetaDescriptionSetter/MetaDescriptionSetter";
 
 const SingleBlogPage: React.FC = () => {
 	const [index, setIndex] = useState<number>(-1);
@@ -30,6 +31,7 @@ const SingleBlogPage: React.FC = () => {
 	return (
 		<MotionWrapper>
 			<PageTitleSetter title={`Mariusz Ptaszek - ${title}`} />
+			<MetaDescriptionSetter description={`${title} - ${description}`} />
 			<Container>
 				<div className={styles["single-article"]}>
 					<div className={styles["single-article__image"]}>
