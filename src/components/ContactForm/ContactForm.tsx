@@ -49,10 +49,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 			newErrors.name = "Imię zawiera niedozwolone znaki.";
 		}
 
-		if (/[^a-zA-Z0-9 ]/.test(formData.subject)) {
-			newErrors.subject = "Tytuł zawiera niedozwolone znaki.";
-		}
-
 		if (
 			formData.message.includes("http://") ||
 			formData.message.includes("https://")
@@ -98,6 +94,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 
 			onSubmit(formData);
 			setSubmitStatus("Wiadomość została wysłana. Dziękuje!");
+			setFormData({
+				name: "",
+				email: "",
+				subject: "",
+				message: "",
+			});
 		} catch (error) {
 			if (error instanceof Error) {
 				setSubmitStatus(`Error: ${error.message}`);

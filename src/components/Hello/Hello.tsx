@@ -48,7 +48,7 @@ const Hello: React.FC = () => {
 								<TypingText
 									texts={["Front-end", "Wordpress"]}
 									speed={10}
-									delay={2000}
+									delay={1500}
 									duration={400}
 								/>
 							</div>
