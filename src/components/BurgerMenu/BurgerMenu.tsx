@@ -4,7 +4,7 @@ import socials from "../../data/socials/Socials";
 import SocialsItem from "../Socials/SocialsItems";
 import styles from "./BurgerMenu.module.scss";
 import Logo from "../Logo/Logo";
-import logo from "/images/ptaszek-logo.png";
+import logo from "/images/ptaszek-logo.webp";
 import MenuData from "../../data/Menu/MenuData";
 import MenuItem from "../Menu/MenuItem";
 import CloseIcon from "../Svg/CloseIcon";

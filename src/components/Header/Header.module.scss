@@ -12,8 +12,11 @@
         padding-top: 43px;
         &-logo {
             img {
-                max-width: 165px;
+                max-width: 145px;
                 display: block;
+                @media(min-width: 575px) {
+                    max-width: 165px;
+                }
             }
         }
         &-burger {

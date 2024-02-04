@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
 import styles from "./Header.module.scss";
-import logo from "/images/ptaszek-logo.png";
+import logo from "/images/ptaszek-logo.webp";
 import Logo from "../Logo/Logo";
 import Nav from "../Menu/Nav";
 import Container from "../Container/Container";
