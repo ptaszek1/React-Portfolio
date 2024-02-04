@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
 									className={styles["sticky-socials__item"]}
 									key={social.id}
 								>
-									<SocialsItem link={social.link}>
+									<SocialsItem link={social.link} name={social.name}>
 										{social.icon}
 									</SocialsItem>
 									<div

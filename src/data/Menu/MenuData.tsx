@@ -11,7 +11,7 @@ const MenuData: {
 	{
 		id: 2,
 		title: "O mnie",
-		to: "/about",
+		to: "/o-mnie",
 	},
 	{
 		id: 3,

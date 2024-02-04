@@ -8,7 +8,7 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ src, alt }) => {
 	return (
-		<NavLink to="/">
+		<NavLink to="/" aria-label="Strona główna - link">
 			<img src={src} alt={alt} />
 		</NavLink>
 	);

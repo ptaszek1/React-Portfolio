@@ -25,7 +25,9 @@ const StickySocials: React.FC<StickySocialsProps> = ({ socials }) => {
 		<div className={styles["sticky-socials"]}>
 			{socials.map((social) => (
 				<div className={styles["sticky-socials__item"]} key={social.id}>
-					<SocialsItem link={social.link}>{social.icon}</SocialsItem>
+					<SocialsItem link={social.link} name={social.name}>
+						{social.icon}
+					</SocialsItem>
 					<div className={styles["sticky-socials__item-line"]}></div>
 				</div>
 			))}

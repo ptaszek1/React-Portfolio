@@ -21,7 +21,7 @@ const App: React.FC = () => {
 			element: <Homepage />,
 		},
 		{
-			path: "/about",
+			path: "/o-mnie",
 			element: <About />,
 		},
 		{
@@ -44,7 +44,9 @@ const App: React.FC = () => {
 		window.scrollTo(0, 0);
 	}, [location]);
 
-	if (!element) return null;
+	if (!element) {
+		return null;
+	}
 
 	return (
 		<>

@@ -1,33 +1,33 @@
 .blue-btn {
-    background-color: #6B84FF;
+    background-color: darken($color: #6B84FF, $amount: 10);
     border-radius: 5px;
     padding: 13px 43px 10px 43px;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 18px;
     color: #fff;
     transition: .3s all ease-in-out;
     cursor: pointer;
     display: inline-block;
-    border: 1px solid #6B84FF;
+    border: 1px solid darken($color: #6B84FF, $amount: 10);
     font-family: "Josefin Sans", sans-serif;
     &:hover {
         background-color: #fff;
-        color: #6B84FF;
+        color: darken($color: #6B84FF, $amount: 10);
     }
 }
 .transparent-btn {
     border-radius: 5px;
     padding: 13px 43px 10px 43px;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 18px;
     color: #fff;
     transition: .3s all ease-in-out;
     cursor: pointer;
     display: inline-block;
     color: #fff;
-    border: 1px solid #6B84FF;
+    border: 1px solid darken($color: #6B84FF, $amount: 10);
     &:hover {
-        background-color: #6B84FF;
+        background-color: darken($color: #6B84FF, $amount: 10);
         color: #fff;
     }
 }

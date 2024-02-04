@@ -70,7 +70,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ openStatus, isOpen }) => (
 									className={styles["burger-menu__bottom-socials-item"]}
 									key={social.id}
 								>
-									<SocialsItem link={social.link}>
+									<SocialsItem link={social.link} name={social.name}>
 										{social.icon}
 									</SocialsItem>
 								</div>
