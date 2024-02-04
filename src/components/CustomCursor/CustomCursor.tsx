@@ -7,7 +7,6 @@ const CustomCursor: React.FC = () => {
 	const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 	const [isClickableHover, setIsClickableHover] = useState(false);
 	const [isMouseDown, setIsMouseDown] = useState(false);
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 	const variants = {
 		default: {
@@ -27,48 +26,32 @@ const CustomCursor: React.FC = () => {
 	};
 
 	useEffect(() => {
-		const handleResize = () => {
-			setWindowWidth(window.innerWidth);
+		const handleMouseMove = (event: MouseEvent) => {
+			setCursorPosition({ x: event.clientX, y: event.clientY });
+			setIsClickableHover(
+				Boolean(
+					(event.target as HTMLElement).closest(
+						"a, button, input, select, textarea"
+					)
+				)
+			);
 		};
 
-		window.addEventListener("resize", handleResize);
+		const handleMouseDown = () => setIsMouseDown(true);
+		const handleMouseUp = () => setIsMouseDown(false);
+
+		document.addEventListener("mousemove", handleMouseMove);
+		document.addEventListener("mousedown", handleMouseDown);
+		document.addEventListener("mouseup", handleMouseUp);
 
 		return () => {
-			window.removeEventListener("resize", handleResize);
+			document.removeEventListener("mousemove", handleMouseMove);
+			document.removeEventListener("mousedown", handleMouseDown);
+			document.removeEventListener("mouseup", handleMouseUp);
 		};
 	}, []);
 
-	useEffect(() => {
-		if (!window.matchMedia("(hover: none)").matches && windowWidth > 768) {
-			const handleMouseMove = (event: MouseEvent) => {
-				setCursorPosition({ x: event.clientX, y: event.clientY });
-				setIsClickableHover(
-					Boolean(
-						(event.target as HTMLElement).closest(
-							"a, button, input, select, textarea"
-						)
-					)
-				);
-			};
-
-			const handleMouseDown = () => setIsMouseDown(true);
-			const handleMouseUp = () => setIsMouseDown(false);
-
-			document.addEventListener("mousemove", handleMouseMove);
-			document.addEventListener("mousedown", handleMouseDown);
-			document.addEventListener("mouseup", handleMouseUp);
-
-			return () => {
-				document.removeEventListener("mousemove", handleMouseMove);
-				document.removeEventListener("mousedown", handleMouseDown);
-				document.removeEventListener("mouseup", handleMouseUp);
-			};
-		} else {
-			document.body.classList.add("standard-cursor");
-		}
-	}, [windowWidth]);
-
-	if (window.matchMedia("(hover: none)").matches || windowWidth <= 768) {
+	if (window.matchMedia("(hover: none)").matches || window.innerWidth <= 768) {
 		return null;
 	}
 
