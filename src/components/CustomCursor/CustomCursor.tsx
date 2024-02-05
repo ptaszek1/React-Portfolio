@@ -28,13 +28,11 @@ const CustomCursor: React.FC = () => {
 	useEffect(() => {
 		const handleMouseMove = (event: MouseEvent) => {
 			setCursorPosition({ x: event.clientX, y: event.clientY });
-			setIsClickableHover(
-				Boolean(
-					(event.target as HTMLElement).closest(
-						"a, button, input, select, textarea"
-					)
-				)
-			);
+			if (event.target instanceof Element) {
+				setIsClickableHover(
+					Boolean(event.target.closest("a, button, input, select, textarea"))
+				);
+			}
 		};
 
 		const handleMouseDown = () => setIsMouseDown(true);

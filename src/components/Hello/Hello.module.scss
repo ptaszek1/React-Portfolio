@@ -23,6 +23,10 @@
             // border: 5px solid #12152F;
             border-radius: 50%;
             pointer-events: none;
+            display: none;
+            @media(min-width: 576px) {
+                display: block;
+            }
             @media(min-width: 768px) {
                 right: -28px;
             }
