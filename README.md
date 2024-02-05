@@ -14,6 +14,7 @@ The project is built using the following technologies:
 
 ## Project Structure
 
+```
 src/
 |-- components/ # React components
 |-- data/ # Data
@@ -21,6 +22,7 @@ src/
 |-- views/ # Page views
 |-- App.tsx # Main application file
 |-- index.tsx # Entry file
+```
 
 ## Contact
 
