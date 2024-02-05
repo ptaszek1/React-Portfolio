@@ -19,7 +19,6 @@ src/
 |-- components/ # React components
 |-- data/ # Data
 |-- pages/ # all subpages
-|-- views/ # Page views
 |-- App.tsx # Main application file
 |-- index.tsx # Entry file
 ```
