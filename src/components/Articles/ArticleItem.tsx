@@ -14,7 +14,7 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ title, image, technology, slu
 		<NavLink to={`/portfolio/${slug}`} className={styles["my-work__item"]}>
 			<div className={styles["my-work__item-image"]}>
 				<picture>
-					<img src={image} alt={title} />
+					<img src={image} alt={title} loading="lazy" />
 				</picture>
 				<div className={styles["my-work__item-image-text"]}>Szczegóły</div>
 			</div>
