@@ -16,11 +16,11 @@ The project is built using the following technologies:
 
 ```
 src/
-|-- components/ # React components
-|-- data/ # Data
-|-- pages/ # all subpages
-|-- App.tsx # Main application file
-|-- index.tsx # Entry file
+|-- components/     # React components
+|-- data/           # Data
+|-- pages/          # all subpages
+|-- App.tsx         # Main application file
+|-- index.tsx       # Entry file
 ```
 
 ## Contact
