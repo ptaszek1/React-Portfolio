@@ -27,12 +27,12 @@ const SkillsData: { id: number; name: string; level: number }[] = [
 	{
 		id: 6,
 		name: "Git",
-		level: 50,
+		level: 70,
 	},
 	{
 		id: 7,
 		name: "Wordpress",
-		level: 100,
+		level: 99,
 	},
 	{
 		id: 8,
@@ -44,20 +44,20 @@ const SkillsData: { id: number; name: string; level: number }[] = [
 		name: "Joomla",
 		level: 70,
 	},
-	{
+    {
 		id: 10,
-		name: "Bootstrap",
-		level: 90,
+		name: "Shoper",
+		level: 70,
 	},
 	{
 		id: 11,
 		name: "React",
-		level: 50,
+		level: 55,
 	},
-	{
+    {
 		id: 12,
-		name: "Shoper",
-		level: 70,
+		name: "Typescript",
+		level: 40,
 	},
 ];
 

@@ -17,7 +17,7 @@ const Portfolio: React.FC = () => {
 			<MetaDescriptionSetter description="Zobacz moje portfolio. Znajdziesz tutaj część moich projektów, które wykonałem w ciągu ostatnich lat. Każdy z nich jest inny, ale wszystkie są zrobione z pasją i zaangażowaniem." />
 			<Container>
 				<section className={styles["my-work"]}>
-					<SectionTitle title="Portfolio" />
+					<SectionTitle title="Portfolio" tag="h1" />
 					<div className={styles["my-work__wrapper"]}>
 						{PortfolioData.map((article) => (
 							<ArticleItem
