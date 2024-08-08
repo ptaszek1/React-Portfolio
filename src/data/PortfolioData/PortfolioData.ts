@@ -128,6 +128,17 @@ import $ltProductsSmall from "/images/portfolio/lt/lean-technology-produkty-370x
 import $ltSupport from "/images/portfolio/lt/lean-technology-wsparcie.webp";
 import $ltSupportSmall from "/images/portfolio/lt/lean-technology-wsparcie-370x310.webp";
 
+// Lean technology
+
+import $proacta from "/images/portfolio/proacta/proacta-small.webp";
+import $proactaSmall from "/images/portfolio/proacta/proacta-small-370x310.webp";
+import $proactaSubpage from "/images/portfolio/proacta/proacta-subpage.webp";
+import $proactaSubpageSmall from "/images/portfolio/proacta/proacta-subpage-370x310.webp";
+import $proactaQuality from "/images/portfolio/proacta/proacta-quality.webp";
+import $proactaQualitySmall from "/images/portfolio/proacta/proacta-quality-370x310.webp";
+import $proactaHome from "/images/portfolio/proacta/proacta-home.webp";
+import $proactaHomeSmall from "/images/portfolio/proacta/proacta-home-370x310.webp";
+
 const PortfolioData: {
 	id: number;
 	title: string;
@@ -140,8 +151,25 @@ const PortfolioData: {
 	smallImage: string;
 	date: string;
 }[] = [
-	{
+    {
 		id: 1,
+		title: "Proacta",
+		description: "",
+		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP"],
+		link: "https://proacta.pl/",
+		slug: "proacta",
+		gallery: [
+			{ original: $proacta, small: $proactaSmall },
+            { original: $proactaHome, small: $proactaHomeSmall },
+			{ original: $proactaSubpage, small: $proactaSubpageSmall },
+			{ original: $proactaQuality, small: $proactaQualitySmall },
+		],
+		mainImage: $proacta,
+		smallImage: $proactaSmall,
+		date: "15.05.2024",
+	},
+	{
+		id: 2,
 		title: "Catering Gorąco Polecam",
 		description: "",
 		technology: ["Wordpress", "Woocommerce", "Sass", "Javascript", "ACF Pro", "PHP"],
@@ -158,7 +186,7 @@ const PortfolioData: {
 		date: "03.02.2023",
 	},
 	{
-		id: 2,
+		id: 3,
 		title: "Medyczna rejestracja",
 		description: "",
 		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP"],
@@ -175,7 +203,7 @@ const PortfolioData: {
 		date: "03.05.2021",
 	},
 	{
-		id: 3,
+		id: 4,
 		title: "Belotto design",
 		description: "",
 		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP"],
@@ -194,7 +222,7 @@ const PortfolioData: {
 		date: "16.03.2021",
 	},
 	{
-		id: 4,
+		id: 5,
 		title: "Lionsgarage",
 		description: "",
 		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP"],
@@ -213,7 +241,7 @@ const PortfolioData: {
 		date: "03.11.2020",
 	},
 	{
-		id: 5,
+		id: 6,
 		title: "Norma machinery",
 		description: "",
 		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP", "Polylang"],
@@ -230,7 +258,7 @@ const PortfolioData: {
 		date: "25.05.2020",
 	},
 	{
-		id: 6,
+		id: 7,
 		title: "Tłumaczenia Szczecin",
 		description: "",
 		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP"],
@@ -249,7 +277,7 @@ const PortfolioData: {
 		date: "21.03.2020",
 	},
 	{
-		id: 7,
+		id: 8,
 		title: "Iwona Durka",
 		description: "",
 		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP", "AOS"],
@@ -268,7 +296,7 @@ const PortfolioData: {
 		date: "21.01.2020",
 	},
 	{
-		id: 8,
+		id: 9,
 		title: "Bygger",
 		description: "",
 		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP"],
@@ -284,7 +312,7 @@ const PortfolioData: {
 		date: "26.08.2019",
 	},
 	{
-		id: 9,
+		id: 10,
 		title: "Pani Flip",
 		description: "",
 		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP"],
@@ -302,7 +330,7 @@ const PortfolioData: {
 		date: "08.04.2019",
 	},
 	{
-		id: 10,
+		id: 11,
 		title: "Lean technology",
 		description: "",
 		technology: ["Wordpress", "Sass", "Javascript", "ACF Pro", "PHP"],
